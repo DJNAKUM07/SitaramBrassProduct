@@ -522,19 +522,18 @@
 
 /* ----------------- Load Header ------------------ */
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Fetch the header HTML content
-  fetch('header.html')  // Path to your header.html file
-    .then(response => response.text())  // Convert the response to text
-    .then(data => {
-      // Inject the header HTML into the container
-      document.getElementById('header-container').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Error loading the header:', error);
-    });
-});
+document.addEventListener("DOMContentLoaded", async function () {
+  try {
+    // Fetch the header HTML content
+    const response = await fetch('header.html'); // Wait for the response
+    const data = await response.text(); // Wait for the text content of the response
 
+    // Inject the header HTML into the container
+    document.getElementById('header-container').innerHTML = data;
+  } catch (error) {
+    console.error('Error loading the header:', error); // Handle errors here
+  }
+});
 
 /* ----------------- Load Header ------------------ */
 
