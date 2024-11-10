@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html
+  class="js sizes customelements history pointerevents postmessage webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers"
+  lang="zxx"
+>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      .gm-err-container {
+        height: 100%;
+        width: 100%;
+        display: table;
+        background-color: #e8eaed;
+        position: relative;
+        left: 0;
+        top: 0;
+      }
+
+      .gm-err-content {
+        border-radius: 1px;
+        padding-top: 0;
+        padding-left: 10%;
+        padding-right: 10%;
+        position: static;
+        vertical-align: middle;
+        display: table-cell;
+      }
+
+      .gm-err-content a {
+        color: #3c4043;
+      }
+
+      .gm-err-icon {
+        text-align: center;
+      }
+
+      .gm-err-title {
+        margin: 5px;
+        margin-bottom: 20px;
+        color: #3c4043;
+        font-family: Roboto, Arial, sans-serif;
+        text-align: center;
+        font-size: 24px;
+      }
+
+      .gm-err-message {
+        margin: 5px;
+        color: #3c4043;
+        font-family: Roboto, Arial, sans-serif;
+        text-align: center;
+        font-size: 12px;
+      }
+
+      .gm-err-autocomplete {
+        padding-left: 20px;
+        background-repeat: no-repeat;
+        -webkit-background-size: 15px 15px;
+        background-size: 15px 15px;
+      }
+
+      sentinel {
+      }
+    </style>
+    <style>
+      .gm-style-moc {
+        background-color: rgba(0, 0, 0, 0.45);
+        pointer-events: none;
+        text-align: center;
+        -webkit-transition: opacity ease-in-out;
+        transition: opacity ease-in-out;
+      }
+
+      .gm-style-mot {
+        color: white;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 22px;
+        margin: 0;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+      }
+
+      sentinel {
+      }
+    </style>
+    <style>
+      .gm-style img {
+        max-width: none;
+      }
+
+      .gm-style {
+        font: 400 11px Roboto, Arial, sans-serif;
+        text-decoration: none;
+      }
+    </style>
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>eCommerce HTML-5 Template</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="manifest"
+      href="https://preview.colorlib.com/theme/estore/site.webmanifest"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://preview.colorlib.com/theme/estore/assets/img/favicon.ico"
+    />
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+    ></script>
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets/css/flaticon.css" />
+    <link rel="stylesheet" href="../assets/css/slicknav.css" />
+    <link rel="stylesheet" href="../assets/css/animate.min.css" />
+    <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="../assets/css/themify-icons.css" />
+    <link rel="stylesheet" href="../assets/css/slick.css" />
+    <link rel="stylesheet" href="../assets/css/nice-select.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="../assets/js/common.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="../assets/js/util.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="../assets/js/map.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="../assets/js/onion.js"
+    ></script>
+  </head>
+
+  <body
+    data-new-gr-c-s-check-loaded="14.1204.0"
+    data-gr-ext-installed=""
+    style="overflow: visible"
+  >
+    <!-- Preloader Start -->
+    <div id="preloader-active" style="display: none">
+      <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+          <div class="preloader-circle"></div>
+          <div class="preloader-img pere-text">
+            <img src="../assets/css/logo.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Preloader Start -->
+
+    <header>
+      <!-- Header Start -->
+      <div class="header-area">
+        <div class="main-header">
+          <div class="header-top top-bg d-none d-lg-block">
+            <div class="container-fluid">
+              <div class="col-xl-12">
+                <div
+                  class="row d-flex justify-content-between align-items-center"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="header-bottom header-sticky sticky-bar sticky">
+            <div class="container-fluid">
+              <div class="row align-items-center">
+                <!-- Logo -->
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
+                  <div class="logo">
+                    <a href="index.html"><img src="./logo(1).png" alt="" /></a>
+                  </div>
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-5">
+                  <!-- Main-menu -->
+                  <div class="main-menu f-right d-none d-lg-block">
+                    <nav>
+                      <ul id="navigation">
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                          <a href="contact.html">Quality Control</a>
+                        </li>
+                        <li><a href="Category.html">Category</a></li>
+                        <li class="hot">
+                          <a href="/theme/estore/#">Latest</a>
+                          <ul class="submenu">
+                            <li>
+                              <a href="product_list.html"> Product list</a>
+                            </li>
+                            <li>
+                              <a href="/theme/estore/single-product.html">
+                                Product Details</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="/theme/estore/blog.html">About Us</a></li>
+
+                        <li><a href="contact.html">Contact</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <!-- <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
+                                <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
+                                    <li class="d-none d-xl-block">
+                                        <div class="form-box f-right ">
+                                            <input type="text" name="Search" placeholder="Search products"
+                                                fdprocessedid="w59oe">
+                                            <div class="search-icon">
+                                                <i class="fas fa-search special-tag"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class=" d-none d-xl-block">
+                                        <div class="favorit-items">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="shopping-card">
+                                            <a href="/theme/estore/cart.html"><i class="fas fa-shopping-cart"></i></a>
+                                        </div>
+                                    </li>
+                                    <li class="d-none d-lg-block"> <a href="/theme/estore/#" class="btn header-btn">Sign
+                                            in</a></li>
+                                </ul>
+                            </div> -->
+                <!-- Mobile Menu -->
+                <div class="col-12">
+                  <div class="mobile_menu d-block d-lg-none">
+                    <div class="slicknav_menu">
+                      <a
+                        href="/theme/estore/#"
+                        aria-haspopup="true"
+                        role="button"
+                        tabindex="0"
+                        class="slicknav_btn slicknav_collapsed"
+                        ><span class="slicknav_menutxt">MENU</span
+                        ><span class="slicknav_icon"
+                          ><span class="slicknav_icon-bar"></span
+                          ><span class="slicknav_icon-bar"></span
+                          ><span class="slicknav_icon-bar"></span></span
+                      ></a>
+                      <ul
+                        class="slicknav_nav slicknav_hidden"
+                        style="display: none"
+                        aria-hidden="true"
+                        role="menu"
+                      >
+                        <li>
+                          <a href="index.html" role="menuitem" tabindex="-1"
+                            >Home</a
+                          >
+                        </li>
+                        <li>
+                          <a href="Category.html" role="menuitem" tabindex="-1"
+                            >Catagori</a
+                          >
+                        </li>
+                        <li class="hot slicknav_collapsed slicknav_parent">
+                          <a
+                            href="/theme/estore/#"
+                            role="menuitem"
+                            aria-haspopup="true"
+                            tabindex="-1"
+                            class="slicknav_item slicknav_row"
+                            ><a href="/theme/estore/#" tabindex="-1">Latest</a>
+                            <span class="slicknav_arrow">+</span></a
+                          >
+                          <ul
+                            class="submenu slicknav_hidden"
+                            role="menu"
+                            style="display: none"
+                            aria-hidden="true"
+                          >
+                            <li>
+                              <a
+                                href="/theme/estore/product_list.html"
+                                role="menuitem"
+                                tabindex="-1"
+                              >
+                                Product list</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="/theme/estore/single-product.html"
+                                role="menuitem"
+                                tabindex="-1"
+                              >
+                                Product Details</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="slicknav_collapsed slicknav_parent">
+                          <a
+                            href="/theme/estore/#"
+                            role="menuitem"
+                            aria-haspopup="true"
+                            tabindex="-1"
+                            class="slicknav_item slicknav_row"
+                            ><a href="/theme/estore/blog.html" tabindex="-1"
+                              >About Us</a
+                            >
+                            <span class="slicknav_arrow">+</span></a
+                          >
+                        </li>
+
+                        <li>
+                          <a
+                            href="/theme/estore/contact.html"
+                            role="menuitem"
+                            tabindex="-1"
+                            >Contact</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Header End -->
+    </header>
+
+    <!-- slider Area Start-->
+    <div class="slider-area">
+      <!-- Mobile Menu -->
+      <div
+        class="single-slider slider-height2 d-flex align-items-center"
+        data-background="assets/img/hero/category.jpg"
+        style="background-image: url('assets/img/hero/category.jpg')"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="hero-cap text-center">
+                <h2>Contact Us</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- slider Area End-->
+
+    <!-- ================ contact section start ================= -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="d-none d-sm-block mb-5 pb-4">
+          <div
+            id="map"
+            class="justify-content-center"
+            style="height: 480px; position: relative; overflow: hidden"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.327487661868!2d-122.42684518468134!3d37.77492927975974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809a43e8c4bd%3A0x8b9827df6eabec8d!2sYour%20Location!5e0!3m2!1sen!2sus!4v1630289191184!5m2!1sen!2sus"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <script>
+            function initMap() {
+              var uluru = {
+                lat: -25.363,
+                lng: 131.044,
+              };
+              var grayStyles = [
+                {
+                  featureType: "all",
+                  stylers: [
+                    {
+                      saturation: -90,
+                    },
+                    {
+                      lightness: 50,
+                    },
+                  ],
+                },
+                {
+                  elementType: "labels.text.fill",
+                  stylers: [
+                    {
+                      color: "#ccdee9",
+                    },
+                  ],
+                },
+              ];
+              var map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                  lat: -31.197,
+                  lng: 150.744,
+                },
+                zoom: 9,
+                styles: grayStyles,
+                scrollwheel: false,
+              });
+            }
+          </script>
+          <script src="../assets/js/js"></script>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <h2 class="contact-title">Get in Touch</h2>
+          </div>
+          <div class="col-lg-8">
+            <form
+              class="form-contact contact_form"
+              action="https://preview.colorlib.com/theme/estore/contact_process.php"
+              method="post"
+              id="contactForm"
+              novalidate="novalidate"
+            >
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <textarea
+                      class="form-control w-100"
+                      name="message"
+                      id="message"
+                      cols="30"
+                      rows="9"
+                      placeholder=" Enter Message"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control valid"
+                      name="name"
+                      id="name"
+                      type="text"
+                      placeholder="Enter your name"
+                      fdprocessedid="4mhw0l"
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control valid"
+                      name="email"
+                      id="email"
+                      type="email"
+                      placeholder="Email"
+                      fdprocessedid="f62bf"
+                    />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      name="subject"
+                      id="subject"
+                      type="text"
+                      placeholder="Enter Subject"
+                      fdprocessedid="o9ggdr"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <button
+                  type="submit"
+                  class="button button-contactForm boxed-btn"
+                  fdprocessedid="khxyk"
+                >
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-3 offset-lg-1">
+            <div class="media contact-info">
+              <span class="contact-info__icon"><i class="ti-home"></i></span>
+              <div class="media-body">
+                <h3>Buttonwood, California.</h3>
+                <p>Rosemead, CA 91770</p>
+              </div>
+            </div>
+            <div class="media contact-info">
+              <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+              <div class="media-body">
+                <h3>+1 253 565 2365</h3>
+                <p>Mon to Fri 9am to 6pm</p>
+              </div>
+            </div>
+            <div class="media contact-info">
+              <span class="contact-info__icon"><i class="ti-email"></i></span>
+              <div class="media-body">
+                <h3>support@colorlib.com</h3>
+                <p>Send us your query anytime!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================ contact section end ================= -->
+
+    <!-- Gallery Start-->
+    <div class="gallery-wrapper lf-padding">
+      <div class="gallery-area">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="gallery-items">
+              <img
+                src="../brassearthingaccessory/brass connectors/brass-connectors.jpg"
+                alt=""
+              />
+            </div>
+            <div class="gallery-items">
+              <img
+                src="../brassearthingaccessory/brass connectors/brass-elbow-tee-male-connectors-250x250.jpg"
+                alt=""
+              />
+            </div>
+            <div class="gallery-items">
+              <img
+                src="../brassearthingaccessory/brass fuse parts/hctypefusecontact.jpg"
+                alt=""
+              />
+            </div>
+            <div class="gallery-items">
+              <img
+                src="../brassearthingaccessory/brass bush pin rings/bush-pin-rings-250x250.jpg"
+                alt=""
+              />
+            </div>
+            <div class="gallery-items">
+              <img
+                src="../brassearthingaccessory/brass bush pin rings/bush-pin-rings-250x250.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Gallery End-->
+
+    <footer>
+      <!-- Footer Start-->
+      <div class="footer-area footer-padding">
+        <div class="container">
+          <div class="row d-flex justify-content-between">
+            <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
+              <div class="single-footer-caption mb-50">
+                <div class="single-footer-caption mb-30">
+                  <!-- logo -->
+                  <div class="footer-logo">
+                    <a
+                      href="https://preview.colorlib.com/theme/estore/index.html"
+                      ><img src="../assets/css/logo2_footer.png" alt=""
+                    /></a>
+                  </div>
+                  <div class="footer-tittle">
+                    <div class="footer-pera">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                        sed do eiusmod tempor incididunt ut labore.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+              <div class="single-footer-caption mb-50">
+                <div class="footer-tittle">
+                  <h4>Quick Links</h4>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                        >About</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                      >
+                        Offers &amp; Discounts</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                      >
+                        Get Coupon</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                      >
+                        Contact Us</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+              <div class="single-footer-caption mb-50">
+                <div class="footer-tittle">
+                  <h4>New Products</h4>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                        >Woman Cloth</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                        >Fashion Accessories</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                      >
+                        Man Accessories</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                      >
+                        Rubber made Toys</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
+              <div class="single-footer-caption mb-50">
+                <div class="footer-tittle">
+                  <h4>Support</h4>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                        >Frequently Asked Questions</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                        >Terms &amp; Conditions</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                        >Privacy Policy</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                        >Privacy Policy</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://preview.colorlib.com/theme/estore/contact.html#"
+                        >Report a Payment Issue</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Footer bottom -->
+          <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-7">
+              <div class="footer-copy-right">
+                <p>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  2024 All rights reserved | This template is made with
+                  <i class="ti-heart" aria-hidden="true"></i> by
+                  <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+              </div>
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-5">
+              <div class="footer-copy-right f-right">
+                <!-- social -->
+                <div class="footer-social">
+                  <a
+                    href="https://preview.colorlib.com/theme/estore/contact.html#"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a
+                    href="https://preview.colorlib.com/theme/estore/contact.html#"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a
+                    href="https://preview.colorlib.com/theme/estore/contact.html#"
+                    ><i class="fab fa-behance"></i
+                  ></a>
+                  <a
+                    href="https://preview.colorlib.com/theme/estore/contact.html#"
+                    ><i class="fas fa-globe"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer End-->
+    </footer>
+
+    <!-- JS here -->
+
+    <!-- All JS Custom Plugins Link Here here -->
+    <script src="../assets/js/modernizr-3.5.0.min.js"></script>
+
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="../assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="../assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/slick.min.js"></script>
+
+    <!-- One Page, Animated-HeadLin -->
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/animated.headline.js"></script>
+
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="../assets/js/jquery.scrollUp.min.js"></script>
+    <script src="../assets/js/jquery.nice-select.min.js"></script>
+    <script src="../assets/js/jquery.sticky.js"></script>
+    <script src="../assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- contact js -->
+    <script src="../assets/js/contact.js"></script>
+    <script src="../assets/js/jquery.form.js"></script>
+    <script src="../assets/js/jquery.validate.min.js"></script>
+    <script src="../assets/js/mail-script.js"></script>
+    <script src="../assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="../assets/js/plugins.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <a
+      id="scrollUp"
+      href="https://preview.colorlib.com/theme/estore/contact.html#top"
+      style="position: fixed; z-index: 2147483647; display: none"
+      ><i class="ti-arrow-up"></i
+    ></a>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="../assets/css/js(1)"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-23581568-13");
+    </script>
+
+    <script
+      defer=""
+      src="../assets/css/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+      integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+      data-cf-beacon='{"rayId":"8dca1b008d1729ef","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2024.10.4","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+      crossorigin="anonymous"
+    ></script>
+
+    <div
+      style="
+        position: absolute;
+        left: 0px;
+        top: -2px;
+        height: 1px;
+        overflow: hidden;
+        visibility: hidden;
+        width: 1px;
+      "
+    >
+      <span
+        style="
+          position: absolute;
+          font-size: 300px;
+          width: auto;
+          height: auto;
+          margin: 0px;
+          padding: 0px;
+          font-family: Roboto, Arial, sans-serif;
+        "
+        >BESbswy</span
+      >
+    </div>
+    <span id="PING_IFRAME_FORM_DETECTION" style="display: none"></span>
+  </body>
+  <grammarly-desktop-integration data-grammarly-shadow-root="true"
+    ><template shadowrootmode="open">
+      <style>
+        div.grammarly-desktop-integration {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        div.grammarly-desktop-integration:before {
+          content: attr(data-content);
+        }
+      </style>
+      <div
+        aria-label="grammarly-integration"
+        role="group"
+        tabindex="-1"
+        class="grammarly-desktop-integration"
+        data-content='{"mode":"full","isActive":true,"isUserDisabled":false}'
+      ></div> </template
+  ></grammarly-desktop-integration>
+</html>
