@@ -10,6 +10,8 @@
   });
 
 
+
+
   /* 2. slick Nav */
   // mobile_menu
   var menu = $('ul#navigation');
@@ -525,7 +527,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
   try {
     // Fetch the header HTML content
-    const response = await fetch('header.html'); // Wait for the response
+    const response = await fetch('Pages/header.html'); // Wait for the response
     const data = await response.text(); // Wait for the text content of the response
 
     // Inject the header HTML into the container
