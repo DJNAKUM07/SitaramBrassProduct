@@ -6,8 +6,15 @@
 </html>
 
 <head>
-  <base href="/SitaramBrassProduct/">
-  <!-- <base href="/"> -->
+  <base id="dynamicBase" href="">
+  <script>
+    // Check if we are in a local or production environment
+    const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+    const baseURL = isLocal ? "/" : "/SitaramBrassProduct/";
+
+    // Set the href attribute of the base tag
+    document.getElementById("dynamicBase").setAttribute("href", baseURL);
+  </script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <style>
     .gm-err-container {
@@ -61,8 +68,6 @@
       -webkit-background-size: 15px 15px;
       background-size: 15px 15px;
     }
-
-    sentinel {}
   </style>
   <style>
     .gm-style-moc {

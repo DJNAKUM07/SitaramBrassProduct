@@ -4,8 +4,16 @@
     class=" sizes customelements history pointerevents postmessage webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers">
 
 <head>
-    <base href="/SitaramBrassProduct/">
-    <!-- <base href="/"> -->
+    <base id="dynamicBase" href="">
+    <script>
+        // Check if we are in a local or production environment
+        const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+        const baseURL = isLocal ? "/" : "/SitaramBrassProduct/";
+
+        // Set the href attribute of the base tag
+        document.getElementById("dynamicBase").setAttribute("href", baseURL);
+    </script>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta http-equiv="x-ua-compatible" content="ie=edge">
