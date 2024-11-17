@@ -522,20 +522,75 @@
 })(jQuery);
 
 
-/* ----------------- Load Header ------------------ */
+/* ----------------- Load Header & Footer ------------------ */
 
-document.addEventListener("DOMContentLoaded", async function () {
-  try {
-    // Fetch the header HTML content
-    const response = await fetch('Pages/header.html'); // Wait for the response
-    const data = await response.text(); // Wait for the text content of the response
+function loadHeaderFooter(pageName, containerId, callback = null) {
+  document.addEventListener("DOMContentLoaded", async function () {
+    try {
+      // Fetch the header/footer HTML content based on the page name
+      const response = await fetch(`Pages/${pageName}`); // Dynamically load the page
+      const data = await response.text(); // Wait for the text content of the response
 
-    // Inject the header HTML into the container
-    document.getElementById('header-container').innerHTML = data;
-  } catch (error) {
-    console.error('Error loading the header:', error); // Handle errors here
-  }
+      // Inject the HTML into the specified container by ID
+      const container = document.getElementById(containerId);
+      if (container) {
+        container.innerHTML = data;
+
+        // If callback is provided, call it after the content is loaded
+        if (callback) {
+          callback(); // Calls the callback function to hide divs or any other post-load action
+        }
+      } else {
+        console.error(`Container with ID '${containerId}' not found.`);
+      }
+    } catch (error) {
+      console.error('Error loading the header/footer:', error); // Handle errors here
+    }
+  });
+}
+
+loadHeaderFooter('header.html', 'header-container');
+loadHeaderFooter('footer.html', 'footer-container', () => {
+  // Call hideFooterDivs after the footer is loaded
+  let footerEleHide = ["latest-product-area"];
+  hideHeaderFooterDivs();
 });
 
 /* ----------------- Load Header ------------------ */
+
+/* ----------------- hide Div's From Header & Footer ------------------ */
+
+function hideHeaderFooterDivs() {
+  // check which html page is loaded & base on that map ids to hide
+  let ids = [];
+  const pageName = window.location.pathname.split('/').pop().split('.').shift();
+
+  switch (pageName) {
+    case 'index':
+      break;
+    case 'Category':
+      ids = ["latest-product-area"];
+      break;
+    case 'product_list':
+      ids = ["latest-product-area", "best-product-area", "best-collection-area", "latest-offers", "shop-method-area", "gallery-area"];
+      break;
+    case 'contact':
+      ids = ["latest-product-area"];
+      break;
+    default:
+      break;
+  }
+
+  ids.forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.style.display = 'none'; // Sets display to none
+    }
+  });
+}
+
+/* ----------------- hide Div's From Header & Footer ------------------ */
+
+
+
 

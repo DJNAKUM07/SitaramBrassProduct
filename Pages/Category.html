@@ -1,71 +1,78 @@
 <!DOCTYPE html>
-<!-- saved from url=(0055)https://preview.colorlib.com/theme/estore/Category.html -->
-<html
-    class="js sizes customelements history pointerevents postmessage webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers"
-    lang="zxx">
+<html lang="zxx">
 
 <head>
-    <base id="dynamicBase" href="">
+    <base id="dynamicBase" href="/">
     <script>
-        // Check if we are in a local or production environment
         const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-        const baseURL = isLocal ? "/" : "/SitaramBrassProduct/";
-
-        // Set the href attribute of the base tag
-        document.getElementById("dynamicBase").setAttribute("href", baseURL);
+        var base = isLocal ? "/" : "/SitaramBrassProduct/";
+        document.getElementById("dynamicBase").setAttribute("href", base);
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Category </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="https://preview.colorlib.com/theme/estore/site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon"
-        href="https://preview.colorlib.com/theme/estore/assets/img/favicon.ico">
 
-    <!-- css here -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ti-icons@0.1.2/css/themify-icons.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap(1).min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
+    <title>Product Category</title>
     <script src="assets/js/main.js" defer></script>
+
+    <script>
+        window.onload = async function () {
+            // Define the container where product cards will be added
+            const productsContainer = document.getElementById("products-container");
+
+            // Generate product cards dynamically
+            try {
+                const response = await fetch('Pages/products.json'); // Adjust the path to your products JSON file
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const products = await response.json(); // Parse JSON data
+
+                products.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.classList.add('col-xl-4', 'col-lg-4', 'col-md-6');
+
+                    // Encode productId to Base64 for URL
+                    const encodedProductId = btoa(product.id);
+
+                    productCard.innerHTML = `
+                        <div class="single-product mb-60">
+                            <div class="product-img">
+                                <img src="${product.image}" alt="${product.name}">
+                                <div class="new-product">
+                                    <span>New</span>
+                                </div>
+                            </div>
+                            <div class="product-caption">
+                                <h4><a href="Pages/product_list.html?productId=${encodedProductId}">${product.name}</a></h4>
+                                <div class="price">
+                                    <p>${product.description}</p>
+                                    <span>₹${product.price}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    // Append the new product card to the container
+                    productsContainer.appendChild(productCard);
+                });
+            } catch (error) {
+                console.error('Error fetching product data for dynamic cards:', error);
+            }
+        };
+    </script>
+
 </head>
 
-<body data-new-gr-c-s-check-loaded="14.1202.0" data-gr-ext-installed="" style="overflow: visible;">
-
-    <!-- Preloader Start -->
-    <div id="preloader-active" style="display: none;">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="./eCommerce HTML-5 Template_files/logo.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader Start -->
-
+<body>
     <div id="header-container"></div>
 
     <main>
-
-        <!-- slider Area Start-->
-        <div class="slider-area ">
-            <!-- Mobile Menu -->
+        <!-- Slider Area Start-->
+        <div class="slider-area">
             <div class="single-slider slider-height2 d-flex align-items-center"
-                data-background="/Vivago.ai/freepik__candid-image-photography-natural-textures-highly-r__73251.jpeg"
-                style="background-image: url(&quot/freepeek/freepik__candid-image-photography-natural-textures-highly-r__73251.jpeg;&quot;);">
+                data-background="/Vivago.ai/freepik__candid-image-photography-natural-textures-highly-r__73251.jpeg">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
@@ -77,368 +84,20 @@
                 </div>
             </div>
         </div>
-        <!-- slider Area End-->
+        <!-- Slider Area End-->
 
-        <!-- Latest Products Start -->
         <section class="latest-product-area latest-padding">
             <div class="container">
-                <div class="row product-btn d-flex justify-content-between">
-                    <div class="properties__button">
-                        <!--Nav Button  -->
-                        <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
-                                    href="https://preview.colorlib.com/theme/estore/Category.html#nav-home" role="tab"
-                                    aria-controls="nav-home" aria-selected="true">All</a>
-                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
-                                    href="https://preview.colorlib.com/theme/estore/Category.html#nav-profile"
-                                    role="tab" aria-controls="nav-profile" aria-selected="false">New</a>
-                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab"
-                                    href="https://preview.colorlib.com/theme/estore/Category.html#nav-contact"
-                                    role="tab" aria-controls="nav-contact" aria-selected="false">Featured</a>
-                                <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab"
-                                    href="https://preview.colorlib.com/theme/estore/Category.html#nav-last" role="tab"
-                                    aria-controls="nav-contact" aria-selected="false">Offer</a>
-                            </div>
-                        </nav>
-                        <!--End Nav Button  -->
-                    </div>
-                    <div class="select-this d-flex">
-                        <div class="featured">
-                            <span>Short by: </span>
-                        </div>
-                        <form action="Category.html#">
-                            <div class="select-itms">
-                                <select name="select" id="select1" style="display: none;">
-                                    <option value="">Featured</option>
-                                    <option value="">Featured A</option>
-                                    <option value="">Featured B</option>
-                                    <option value="">Featured C</option>
-                                </select>
-                                <div class="nice-select" tabindex="0"><span class="current">Featured</span>
-                                    <ul class="list">
-                                        <li data-value="" class="option selected">Featured</li>
-                                        <li data-value="" class="option">Featured A</li>
-                                        <li data-value="" class="option">Featured B</li>
-                                        <li data-value="" class="option">Featured C</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                <div class="row" id="products-container">
+                    <!-- Product cards will be dynamically injected here -->
                 </div>
-                <!-- Nav Card -->
-                <div class="tab-content" id="nav-tabContent">
-                    <!-- card one -->
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="single-product mb-60">
-                                    <div class="product-img">
-                                        <img src="Vivago.ai/p_5d157e78-99cf-11ef-830c-aac38811e8c2_wm ().png" alt="">
-                                        <div class="new-product">
-                                            <span>New</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-caption">
-                                        <h4><a href="/product_list.html">Brass Nipples</a></h4>
-                                        <div class="price">
-                                            <p>
-                                                Connecting with Strength, Sealing with Precision.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="single-product mb-60">
-                                    <div class="product-img">
-                                        <img src="Vivago.ai/p_5d157e78-99cf-11ef-830c-aac38811e8c2_wm ().png" alt="">
-                                        <div class="new-product">
-                                            <span>New</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-caption">
-                                        <h4><a href="/product_list.html">Brass Washer</a></h4>
-                                        <div class="price">
-                                            <p>
-                                                Support That Shines, Strength That Endures.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="single-product mb-60">
-                                    <div class="product-img">
-                                        <img src="Vivago.ai/p_5d157e78-99cf-11ef-830c-aac38811e8c2_wm ().png" alt="">
-                                        <div class="new-product">
-                                            <span>New</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-caption">
-
-                                        <h4><a href="/product_list.html">Brass Nut Boult</a></h4>
-                                        <div class="price">
-                                            <p>
-                                                Strength That Lasts, Precision That Fits.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="single-product mb-60">
-                                    <div class="product-img">
-                                        <img src="freepeek/WhatsApp Image 2024-11-03 at 11.36.22 AM.png" alt="">
-                                        <div class="new-product">
-                                            <span>New</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-caption">
-
-                                        <h4><a href="/product_list.html">Brass Nut Boult</a></h4>
-                                        <div class="price">
-                                            <p>
-                                                Strength That Lasts, Precision That Fits.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="single-product mb-60">
-                                    <div class="product-img">
-                                        <img src="freepeek/WhatsApp Image 2024-11-03 at 11.36.22 AM.png" alt="">
-                                        <div class="new-product">
-                                            <span>New</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-caption">
-
-                                        <h4><a href="/product_list.html">Brass Nut Boult</a></h4>
-                                        <div class="price">
-                                            <p>
-                                                Strength That Lasts, Precision That Fits.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="single-product mb-60">
-                                    <div class="product-img">
-                                        <img src="freepeek/WhatsApp Image 2024-11-03 at 11.36.22 AM.png" alt="">
-                                        <div class="new-product">
-                                            <span>New</span>
-                                        </div>
-                                    </div>
-                                    <div class="product-caption">
-
-                                        <h4><a href="/product_list.html">Brass Nut Boult</a></h4>
-                                        <div class="price">
-                                            <p>
-                                                Strength That Lasts, Precision That Fits.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Nav Card -->
             </div>
         </section>
-        <!-- Latest Products End -->
-
-        <!-- Latest Offers Start -->
-        <div class="latest-wrapper lf-padding">
-            <div class="latest-area latest-height d-flex align-items-center"
-                data-background="assets/img/collection/latest-offer.png"
-                style="background-image: url(&quot;assets/img/collection/latest-offer.png&quot;);">
-                <div class="container">
-                    <div class="row d-flex align-items-center">
-                        <div class="col-xl-5 col-lg-5 col-md-6 offset-xl-1 offset-lg-1">
-                            <div class="latest-caption">
-                                <h2>Get Our<br>Latest Offers News</h2>
-                                <p>Subscribe news latter</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-lg-5 col-md-6 ">
-                            <div class="latest-subscribe">
-                                <form action="https://formspree.io/f/mvgoknae" method="POST"> <input type="email"
-                                        placeholder="Your email here" name="email">
-                                    <button type="submit">Shop Now</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- man Shape -->
-                <div class="man-shape">
-                    <img src="./eCommerce HTML-5 Template_files/latest-man.png" alt="">
-                </div>
-            </div>
-        </div>
-        <!-- Latest Offers End -->
-        <!-- Shop Method Start-->
-        <div class="shop-method-area section-padding30">
-            <div class="container">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-xl-3 col-lg-3 col-md-6">
-                        <div class="single-method mb-40">
-                            <i class="ti-package"></i>
-                            <h6>Free Shipping Method</h6>
-                            <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6">
-                        <div class="single-method mb-40">
-                            <i class="ti-unlock"></i>
-                            <h6>Secure Payment System</h6>
-                            <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6">
-                        <div class="single-method mb-40">
-                            <i class="ti-reload"></i>
-                            <h6>Secure Payment System</h6>
-                            <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Shop Method End-->
-        <!-- Gallery Start-->
-        <div class="gallery-wrapper lf-padding">
-            <div class="gallery-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="gallery-items">
-                            <img src=".brassearthingaccessory/brass connectors/brass-connectors.jpg" alt="">
-                        </div>
-                        <div class="gallery-items">
-                            <img src=".brassearthingaccessory/brass connectors/brass-elbow-tee-male-connectors-250x250.jpg"
-                                alt="">
-                        </div>
-                        <div class="gallery-items">
-                            <img src=".brassearthingaccessory/brass fuse parts/hctypefusecontact.jpg" alt="">
-                        </div>
-                        <div class="gallery-items">
-                            <img src=".brassearthingaccessory/brass bush pin rings/bush-pin-rings-250x250.jpg" alt="">
-                        </div>
-                        <div class="gallery-items">
-                            <img src=".brassearthingaccessory/brass bush pin rings/bush-pin-rings-250x250.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Gallery End-->
-
     </main>
-    <footer>
 
-        <!-- Footer Start-->
-        <div class="footer-area footer-padding">
-            <div class="container">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="single-footer-caption mb-30">
-                                <!-- logo -->
-                                <div class="footer-logo">
-                                    <a href="/index.html"><img src="./logo2_footer.png" alt=""></a>
-                                </div>
-                                <div class="footer-tittle">
-                                    <div class="footer-pera">
-                                        <p>We are manufacturers a vast range of brass push-on hose barb pipe thread.
-                                            Push-on hose barb tapred male pipe thread, barbed tee.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Quick Links</h4>
-                                <ul>
-                                    <li><a href="/theme/estore/#">About</a></li>
-                                    <li><a href="/theme/estore/#">Quality Control</a></li>
-                                    <li><a href="/theme/estore/#">Products</a></li>
-
-                                    <li><a href="/theme/estore/#"> Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>New Products</h4>
-                                <ul>
-                                    <li><a href="/theme/estore/#">Brass Cables</a></li>
-                                    <li><a href="/theme/estore/#">Male Bush</a>
-                                    </li>
-                                    <li><a href="/theme/estore/#"> Female Bush</a></li>
-                                    <li><a href="/theme/estore/#"> Cable Gland</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Support</h4>
-                                <ul>
-                                    <li><a href="/theme/estore/#">Frequently Asked
-                                            Questions</a></li>
-                                    <li><a href="/theme/estore/#">Terms &amp; Conditions</a>
-                                    </li>
-                                    <li><a href="/theme/estore/#">Privacy Policy</a></li>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Footer bottom -->
-                <div class="row">
-                    <div class="col-xl-7 col-lg-7 col-md-7">
-                        <div class="footer-copy-right">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright ©
-                                <script>document.write(new Date().getFullYear());</script> All rights reserved |
-                                This website <i class="ti-heart" aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com/" target="_blank">Sitaram Barss Product</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-5 col-md-5">
-                        <div class="footer-copy-right f-right">
-                            <!-- social -->
-                            <div class="footer-social">
-                                <a href="/theme/estore/#"><i class="fab fa-twitter"></i></a>
-                                <a href="/theme/estore/#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="/theme/estore/#"><i class="fab fa-behance"></i></a>
-                                <a href="/theme/estore/#"><i class="fas fa-globe"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End-->
-
-    </footer>
+    <div id="footer-container"></div>
 
     <!-- JS here -->
-
-    <!-- All JS Custom Plugins Link Here here -->
     <script src="assets/js/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
     <script src="assets/js/jquery-1.12.4.min.js"></script>
@@ -446,33 +105,29 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- Jquery Mobile Menu -->
     <script src="assets/js/jquery.slicknav.min.js"></script>
-
     <!-- Jquery Slick , Owl-Carousel Plugins -->
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/slick.min.js"></script>
-
     <!-- One Page, Animated-HeadLin -->
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/animated.headline.js"></script>
     <script src="assets/js/jquery.magnific-popup.js"></script>
-
     <!-- Scrollup, nice-select, sticky -->
     <script src="assets/js/jquery.scrollUp.min.js"></script>
     <script src="assets/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/jquery.sticky.js"></script>
-
     <!-- contact js -->
     <script src="assets/js/contact.js"></script>
     <script src="assets/js/jquery.form.js"></script>
     <script src="assets/js/jquery.validate.min.js"></script>
     <script src="assets/js/mail-script.js"></script>
     <script src="assets/js/jquery.ajaxchimp.min.js"></script>
-
     <!-- Jquery Plugins, main Jquery -->
     <script src="assets/js/plugins.js"></script>
-    <a id="scrollUp" href="/theme/estore/#top" style="display: none; position: fixed; z-index: 2147483647;"><i
-            class="ti-arrow-up"></i></a>
 
+    <a id="scrollUp" href="/theme/estore/#top" style="display: none; position: fixed; z-index: 2147483647;">
+        <i class="ti-arrow-up"></i>
+    </a>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="" src="assets/js/js"></script>
@@ -488,33 +143,6 @@
         integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
         data-cf-beacon="{&quot;rayId&quot;:&quot;8d42166ddfdf4007&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2024.10.1&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;}"
         crossorigin="anonymous"></script>
-
-    <span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span>
-</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open">
-        <style>
-            div.grammarly-desktop-integration {
-                position: absolute;
-                width: 1px;
-                height: 1px;
-                padding: 0;
-                margin: -1px;
-                overflow: hidden;
-                clip: rect(0, 0, 0, 0);
-                white-space: nowrap;
-                border: 0;
-                -moz-user-select: none;
-                -webkit-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
-
-            div.grammarly-desktop-integration:before {
-                content: attr(data-content);
-            }
-        </style>
-        <div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration"
-            data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}">
-        </div>
-    </template></grammarly-desktop-integration>
+</body>
 
 </html>

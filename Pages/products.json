@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Brass Nut Bolts",
+        "description": "Our brass nut bolts are engineered for strength, reliability, and resistance to corrosion.",
+        "price": 100,
+        "image": "Vivago.ai/p_5d157e78-99cf-11ef-830c-aac38811e8c2_wm ().png"
+    },
+    {
+        "id": 2,
+        "name": "Brass Washers",
+        "description": "Brass washers are used to distribute the load of a threaded fastener.",
+        "price": 80,
+        "image": "Vivago.ai/p_5d157e78-99cf-11ef-830c-aac38811e8c2_wm ().png"
+    },
+    {
+        "id": 3,
+        "name": "Brass Screws",
+        "description": "Our brass screws are designed to be corrosion resistant and are ideal for use in outdoor applications.",
+        "price": 120,
+        "image": "Vivago.ai/p_5d157e78-99cf-11ef-830c-aac38811e8c2_wm ().png"
+    },
+    {
+        "id": 4,
+        "name": "Brass Nut Bolts",
+        "description": "Our brass nut bolts are engineered for strength, reliability, and resistance to corrosion.",
+        "price": 100,
+        "image": "Vivago.ai/p_5d157e78-99cf-11ef-830c-aac38811e8c2_wm ().png"
+    },
+    {
+        "id": 5,
+        "name": "Brass Washers",
+        "description": "Brass washers are, used to distribute the load of a threaded fastener.",
+        "price": 80,
+        "image": "Vivago.ai/p_5d157e78-99cf-11ef-830c-aac38811e8c2_wm ().png"
+    },
+    {
+        "id": 6,
+        "name": "Brass Screws",
+        "description": "Our brass screws are designed to be corrosion resistant and are ideal for use in outdoor applications.",
+        "price": 120,
+        "image": "Vivago.ai/p_5d157e78-99cf-11ef-830c-aac38811e8c2_wm ().png"
+    },
+    {
+        "id": 7,
+        "name": "Brass Nut Bolts",
+        "description": "Our brass nut bolts are engineered for strength, reliability, and resistance to corrosion.",
+        "price": 100,
+        "image": "Vivago.ai/p_5d157e78-99cf-11ef-830c-aac38811e8c2_wm ().png"
+    },
+    {
+        "id": 8,
+        "name": "Brass Washers",
+        "description": "Brass washers are, used to distribute the load of a threaded fastener.",
+        "price": 80,
+        "image": "freepeek/WhatsApp%20Image%202024-11-03%20at%2011.36.22%20AM.png"
+    },
+    {
+        "id": 9,
+        "name": "Brass Screws",
+        "description": "Our brass screws are designed to be corrosion resistant and are ideal for use in outdoor applications.",
+        "price": 120,
+        "image": "freepeek/WhatsApp%20Image%202024-11-03%20at%2011.36.22%20AM.png"
+    },
+    {
+        "id": 10,
+        "name": "Brass Nut Bolts",
+        "description": "Our brass nut bolts are engineered for strength, reliability, and resistance to corrosion.",
+        "price": 100,
+        "image": "freepeek/WhatsApp%20Image%202024-11-03%20at%2011.36.22%20AM.png"
+    }
+]
