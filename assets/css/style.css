@@ -1611,14 +1611,15 @@ input:focus::-moz-placeholder {
 
 /* line 876, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
 .footer-padding {
-  padding-top: 150px;
+  padding-top: 100px;
+  /* padding-top: 150px; */
   padding-bottom: 120px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
   /* line 876, ../../SAIFUL/Running_project/250 eCommerce_HTML/250 eCommerce_HTML/250 eCommerce_HTML/assets/scss/_common.scss */
   .footer-padding {
-    padding-top: 150px;
+    padding-top: 90px;
     padding-bottom: 120px;
   }
 }
@@ -9134,3 +9135,5 @@ input:focus {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+

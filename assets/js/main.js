@@ -1,7 +1,17 @@
-(function ($) {
-  "use strict"
 
-  /* 1. Proloder */
+loadHeaderFooter('header.html', 'header-container');
+loadHeaderFooter('footer.html', 'footer-container', () => {
+  // Call hideFooterDivs after the footer is loaded
+  let footerEleHide = ["latest-product-area"];
+  hideHeaderFooterDivs();
+});
+
+// loadHeaderCSS();
+
+(function ($) {
+  "use strict";
+
+  /* 1. Preloader */
   $(window).on('load', function () {
     $('#preloader-active').delay(450).fadeOut('slow');
     $('body').delay(450).css({
@@ -9,22 +19,20 @@
     });
   });
 
+  /* 2. Slick Nav */
+  // Mobile Menu
+  $(document).ready(function () {
+    var menu = $('ul#navigation');
+    if (menu.length) {
+      menu.slicknav({
+        prependTo: ".mobile_menu",
+        closedSymbol: '+',
+        openedSymbol: '-'
+      });
+    }
+  });
 
-
-
-  /* 2. slick Nav */
-  // mobile_menu
-  var menu = $('ul#navigation');
-  if (menu.length) {
-    menu.slicknav({
-      prependTo: ".mobile_menu",
-      closedSymbol: '+',
-      openedSymbol: '-'
-    });
-  };
-
-
-  /* 3. MainSlider-1 */
+  /* 3. Main Slider */
   function mainSlider() {
     var BasicSlider = $('.slider-active');
     BasicSlider.on('init', function (e, slick) {
@@ -43,30 +51,31 @@
       arrows: false,
       prevArrow: '<button type="button" class="slick-prev"><i class="ti-shift-left"></i></button>',
       nextArrow: '<button type="button" class="slick-next"><i class="ti-shift-right"></i></button>',
-      responsive: [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+          }
+        },
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false
+          }
         }
-      },
-      {
-        breakpoint: 991,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false
-        }
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false
-        }
-      }
       ]
     });
 
@@ -88,9 +97,17 @@
   }
   mainSlider();
 
+  // menu fixed js code
+  $(window).scroll(function () {
+    var window_top = $(window).scrollTop() + 1;
+    if (window_top > 50) {
+      $('.main_menu').addClass('menu_fixed animated fadeInDown');
+    } else {
+      $('.main_menu').removeClass('menu_fixed animated fadeInDown');
+    }
+  });
 
-
-  /* 4. Testimonial Active*/
+  /* 4. Testimonial Active */
   var testimonial = $('.h1-testimonial-active');
   if (testimonial.length) {
     testimonial.slick({
@@ -112,7 +129,7 @@
             slidesToScroll: 1,
             infinite: true,
             dots: false,
-            arrow: false
+            arrows: false
           }
         },
         {
@@ -135,7 +152,6 @@
     });
   }
 
-
   /* 5. Gallery Active */
   var client_list = $('.completed-active');
   if (client_list.length) {
@@ -149,33 +165,23 @@
       nav: false,
       dots: false,
       margin: 15,
-
       autoplayHoverPause: true,
       responsive: {
-        0: {
-          items: 1
-        },
-        768: {
-          items: 2
-        },
-        992: {
-          items: 2
-        },
-        1200: {
-          items: 3
-        }
+        0: { items: 1 },
+        768: { items: 2 },
+        992: { items: 2 },
+        1200: { items: 3 }
       }
     });
   }
 
-
-  /* 6. Nice Selectorp  */
+  /* 6. Nice Select */
   var nice_Select = $('select');
   if (nice_Select.length) {
     nice_Select.niceSelect();
   }
 
-  /* 7.  Custom Sticky Menu  */
+  /* 7. Custom Sticky Menu */
   $(window).on('scroll', function () {
     var scroll = $(window).scrollTop();
     if (scroll < 245) {
@@ -183,10 +189,7 @@
     } else {
       $(".header-sticky").addClass("sticky-bar");
     }
-  });
 
-  $(window).on('scroll', function () {
-    var scroll = $(window).scrollTop();
     if (scroll < 245) {
       $(".header-sticky").removeClass("sticky");
     } else {
@@ -194,9 +197,7 @@
     }
   });
 
-
-
-  /* 8. sildeBar scroll */
+  /* 8. ScrollUp */
   $.scrollUp({
     scrollName: 'scrollUp', // Element ID
     topDistance: '300', // Distance from top before showing element (px)
@@ -208,10 +209,9 @@
     activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
   });
 
-
-  /* 9. data-background */
+  /* 9. Data Background */
   $("[data-background]").each(function () {
-    $(this).css("background-image", "url(" + $(this).attr("data-background") + ")")
+    $(this).css("background-image", "url(" + $(this).attr("data-background") + ")");
   });
 
 
@@ -354,16 +354,6 @@
   // niceSelect js code
   $(document).ready(function () {
     $('select').niceSelect();
-  });
-
-  // menu fixed js code
-  $(window).scroll(function () {
-    var window_top = $(window).scrollTop() + 1;
-    if (window_top > 50) {
-      $('.main_menu').addClass('menu_fixed animated fadeInDown');
-    } else {
-      $('.main_menu').removeClass('menu_fixed animated fadeInDown');
-    }
   });
 
   // $('.counter').counterUp({
@@ -549,12 +539,6 @@ function loadHeaderFooter(pageName, containerId, callback = null) {
   });
 }
 
-loadHeaderFooter('header.html', 'header-container');
-loadHeaderFooter('footer.html', 'footer-container', () => {
-  // Call hideFooterDivs after the footer is loaded
-  let footerEleHide = ["latest-product-area"];
-  hideHeaderFooterDivs();
-});
 
 /* ----------------- Load Header ------------------ */
 
@@ -575,7 +559,9 @@ function hideHeaderFooterDivs() {
       ids = ["latest-product-area", "best-product-area", "best-collection-area", "latest-offers", "shop-method-area", "gallery-area"];
       break;
     case 'contact':
-      ids = ["latest-product-area"];
+      ids = ["latest-product-area", "best-product-area", "best-collection-area", "latest-offers", "shop-method-area", "gallery-area"];
+    case 'QualityPolicy':
+      ids = ["latest-product-area", "best-product-area", "best-collection-area", "latest-offers", "shop-method-area", "gallery-area"];
       break;
     default:
       break;
@@ -590,6 +576,125 @@ function hideHeaderFooterDivs() {
 }
 
 /* ----------------- hide Div's From Header & Footer ------------------ */
+
+/* ----------------- loadHeaderCSS ------------------ */
+
+
+function loadHeaderCSS() {
+  // Create a <style> element to inject CSS into the <head> section
+  var style = document.createElement("style");
+  style.innerHTML = `
+        /* Ensure that the main menu is hidden on small screens */
+        .main-menu {
+            display: none;
+        }
+
+        /* Make the mobile menu visible only on small screens */
+        .mobile_menu {
+            display: block;
+        }
+
+        /* SlickNav Button (Mobile Menu Button) */
+        .slicknav_btn {
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .slicknav_btn:hover {
+            background-color: #444;
+        }
+
+        .slicknav_icon {
+            display: block;
+            position: relative;
+        }
+
+        .slicknav_icon-bar {
+            width: 22px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Mobile Menu Items */
+        .slicknav_menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .slicknav_menu li {
+            background-color: #333;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        .slicknav_menu li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .slicknav_menu li a:hover {
+            background-color: #444;
+            color: #fff;
+        }
+
+        /* Submenu Items */
+        .slicknav_menu .submenu li a {
+            background-color: #555;
+            padding-left: 30px;
+        }
+
+        .slicknav_menu .submenu li a:hover {
+            background-color: #666;
+        }
+
+        /* Ensure Menu is hidden and shows on mobile */
+        @media (max-width: 992px) {
+            .main-menu {
+                display: none;
+            }
+
+            .mobile_menu {
+                display: block;
+            }
+
+            .slicknav_btn {
+                display: block;
+            }
+
+            /* Adjust menu items for mobile */
+            .slicknav_menu li {
+                background-color: #333;
+                padding-left: 20px;
+            }
+
+            /* Customize menu item text */
+            .slicknav_menu li a {
+                font-size: 18px;
+            }
+
+            /* Adjust submenu for mobile */
+            .slicknav_menu .submenu li a {
+                font-size: 16px;
+                padding-left: 40px;
+            }
+        }
+    `;
+
+  // Append the style to the <head> section
+  document.head.appendChild(style);
+}
+
+/* ----------------- loadHeaderCSS ------------------ */
 
 
 

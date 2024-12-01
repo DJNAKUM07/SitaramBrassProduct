@@ -69,11 +69,11 @@
                                 <h4><a href="Pages/product_list.html?productId=${encodedProductId}">${product.name}</a></h4>
                                 <div class="price">
                                     <p>${product.description}</p>
-                                    <span>₹${product.price}</span>
                                 </div>
                             </div>
                         </div>
                     `;
+                    //  <span>₹${product.price}</span>
 
                     // Append the new product card to the container
                     productsContainer.appendChild(productCard);
@@ -107,7 +107,8 @@
         </div>
         <!-- Slider Area End-->
 
-        <section class="latest-product-area latest-padding">
+        <!-- <section class="latest-product-area latest-padding"> -->
+        <section class="latest-product-area">
             <div class="container">
                 <div class="row" id="products-container">
                     <!-- Product cards will be dynamically injected here -->
